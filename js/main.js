@@ -4,7 +4,7 @@ let currentPage = 0;
 let imgURLs = ["img/Page7.png", "img/CowsVoiceUnanswered.png", "img/CowsVoiceanswered.png", "img/Page5.png", 
                 "img/DucksVoiceUnanswered.png", "img/DucksVoiceanswered.png", "img/Page3.png", 
                 "img/ChickensVoiceUnanswered.png", "img/ChickensVoiceanswered.png", "img/Page1.png", 
-                "img/FrontCover.png", "img/Chick.png", "img/Duck.png", "img/Cow.png"];
+                "img/FrontCover.png", "img/Chick.png", "img/Duck.png", "img/Cow.png", "img/background.svg"];
 
 let audioURLs = ["https://freesound.org/data/previews/73/73573_877451-lq.mp3", "Sounds/Duck-quacking-sound.mp3",
                 "https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-audio-hero/audio_hero_Cow_DIGIC10_23_340.mp3?_=7"];
@@ -88,7 +88,7 @@ function setupAnimalSounds() {
     })
 
     var duckAudio = document.createElement("audio");
-    duckAudio.src = "/Sounds/Duck-quacking-sound.mp3";
+    duckAudio.src = "Sounds/Duck-quacking-sound.mp3";
     duckAudio.volume = 0.05;
     duckAudio.loop = true;
 

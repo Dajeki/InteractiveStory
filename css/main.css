@@ -5,7 +5,7 @@
     --page-center: rgb(200, 215, 216);
     --page-font: black;
     --selection-background-color: rgb(222,229,123);
-    --book-background-image: url('img/background.svg');
+    --book-background-image: url('../img/background.svg');
 }
 
 * {
