@@ -1,10 +1,10 @@
 let zIndexCurrent = 1;
 let currentPage = 0;
 
-let imgURLs = ["/img/Page7.png", "/img/CowsVoiceUnanswered.png", "/img/CowsVoiceanswered.png", "/img/Page5.png", 
-                "/img/DucksVoiceUnanswered.png", "/img/DucksVoiceanswered.png", "/img/Page3.png", 
-                "/img/ChickensVoiceUnanswered.png", "/img/ChickensVoiceanswered.png", "/img/Page1.png", 
-                "/img/FrontCover.png", "/img/Chick.png", "/img/Duck.png", "/img/Cow.png"];
+let imgURLs = ["img/Page7.png", "img/CowsVoiceUnanswered.png", "img/CowsVoiceanswered.png", "img/Page5.png", 
+                "img/DucksVoiceUnanswered.png", "img/DucksVoiceanswered.png", "img/Page3.png", 
+                "img/ChickensVoiceUnanswered.png", "img/ChickensVoiceanswered.png", "img/Page1.png", 
+                "img/FrontCover.png", "img/Chick.png", "img/Duck.png", "img/Cow.png"];
 
 let audioURLs = ["https://freesound.org/data/previews/73/73573_877451-lq.mp3", "http://www.orangefreesounds.com/wp-content/uploads/2018/06/Duck-quacking-sound.mp3?_=1",
                 "https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-audio-hero/audio_hero_Cow_DIGIC10_23_340.mp3?_=7"];
