@@ -1,0 +1,173 @@
+:root {
+    --cover-color: black;
+    --cover-font: #ffffff;
+    --page-color: rgb(35,67,46);
+    --page-center: rgb(200, 215, 216);
+    --page-font: black;
+    --selection-background-color: rgb(222,229,123);
+    --book-background-image: url('/img/background.svg');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.container {
+    margin: 0 !important;
+}
+@media (min-width: 1200px) {
+        .container, .container-lg, .container-md, .container-sm, .container-xl {
+            max-width: 100%;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    perspective: 3000px;
+    background-image: var(--book-background-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+img {
+    height: auto;
+}
+
+#mainContent {
+    height: 80%;
+}
+
+.rightButton {
+    float: right;
+    margin-right: 1em;
+}
+.leftButton {
+    float: left;
+    margin-left: 1em;
+}
+
+
+.Book {
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    backface-visibility: visible;
+}
+
+.Front, .Back {
+    color: var(--cover-font);
+}
+
+.Front, .Back, .evenPage , .oddPage {
+    background-color: var(--cover-color);
+    display: Flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+}
+.Front, .evenPage {
+    border-bottom-right-radius: .5em;
+    border-top-right-radius: .5em;
+}
+
+.Back, .oddPage {
+    border-bottom-left-radius: .5em;
+    border-top-left-radius: .5em;
+}
+
+.Page1, .Page2, .Page3, .Page4, .Page5, .Page6, .Page7, .Page8, .Page9,
+.Page10, .Page11, .Page12, .Page {
+    background-color: var(--page-color);
+    color: var(--page-font);
+}
+
+.evenPage , .oddPage {
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    /* transition: transform 4s ease-in-out; */
+    margin:auto;
+}
+
+.evenPage {
+    left: 50%;   
+}
+.oddPage {   
+    right: 50%;
+}
+
+
+.evenPage {
+    transform-origin: left center;
+}
+.openEvenPage {
+    transform: rotateY(-180deg);
+}
+.closeEvenPage {
+    transform: rotateY(0deg);
+}
+
+.oddPage {
+    transform-origin:right center;
+}
+.openOddPage {
+    transform: rotateY(0deg);
+}
+.closeOddPage {
+    transform: rotateY(180deg);
+}
+
+.hiddenToggle {
+    display: none;
+}
+
+/* Preload stop to animations putting elements into place */
+.preload {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+.animalAnswer {
+    opacity: 0;
+    position: absolute;
+}
+
+.AnimalSelection {
+    display: flex;
+    align-items: center;
+    flex-direction: row; 
+    justify-content: center;
+    justify-self: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--selection-background-color);
+}
+
+#footer {
+    height: 20%;
+    text-align: center;
+}
+
+#footerwrap {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.animalPiece {
+    width: auto;
+    max-width: 33%;
+    max-height: 100%;
+}
+

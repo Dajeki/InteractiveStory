@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Story</title>
+
+    <!--Jquery main scripts-->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <!--Jquery UI-->
+    <link rel='stylesheet' type='text/css' href='https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css'>
+    <script
+    src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+    integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+    crossorigin="anonymous"></script>
+    <!--Adds Touch functionality to the JQuery ui elements (mobile)-->
+    <script src="js/jqueryTouchPunch.js"></script>
+    <!-- Bootstrap for responsive design -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" 
+    integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" 
+    crossorigin="anonymous"></script>
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/b5d6b3f741.js" crossorigin="anonymous"></script>
+
+    <!--My Code here-->
+    <script src="js/main.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+
+    <script>
+        $(window).on("load",function(e) {        
+            setupBookClasses();
+            setupAnimationHold();  
+            setupBookAnimation();
+            setupAnimalSounds();
+            setupPiecesDrag();
+            
+            $('body').show();
+        }); 
+        
+    </script>
+</head>
+<body class="container" style="display: none;" >
+    <!-- <span class="leftButton" style="font-size: 3em; color: Tomato;">
+        <i class="fas fa-caret-square-left"></i>
+    </span>
+
+    <span class="rightButton" style="font-size: 3em; color: Tomato;">
+        <i class="fas fa-caret-square-right"></i>
+    </span> -->
+
+    <div id="mainContent" class="row" >  
+        <div class="Book col-xl-12">
+            <div class="Back">
+                <img src="/img/Page7.png" alt="A sheep, chick, duck, cow, horse, and geko all making noise. The page says Thier voice is beautiful." style="width:100%;"/>
+            </div>
+            <div class="Page6">
+                <img id="cowUnAns" src="/img/CowsVoiceUnanswered.png" style="width:100%;"/>
+                <img id="answerThree" class="animalAnswer" src="/img/CowsVoiceanswered.png" style="width:100%;"/>
+            </div>
+            <div class="Page5">
+                <img src="/img/Page5.png" alt="A sheep, chick, and duck hearing sounds that look like a musical scale. The page says Moo Moo Moo whos voice is this?" style="width:100%;"/>
+            </div>
+            <div class="Page4">
+                <img id="duckUnAns" src="/img/DucksVoiceUnanswered.png" style="width:100%;"/>
+                <img id="answerTwo" class="animalAnswer" src="/img/DucksVoiceanswered.png" style="width:100%;"/>
+            </div>
+            <div class="Page3">
+                <img src="/img/Page3.png" alt="A sheep and chick hearing sounds that look like a musical scale. The page says Quack Quack Quack whos voice is this?" style="width:100%;"/>
+            </div>
+            <div class="Page2">
+                <img id="chickUnAns" src="/img/ChickensVoiceUnanswered.png" style="width:100%;"/>
+                <img id="answerOne" class="animalAnswer" src="/img/ChickensVoiceanswered.png" style="width:100%;"/>
+            </div>
+            <div class="Page1">
+                <img src="/img/Page1.png" alt="A sheep hearing sounds that look like a musical scale. The page says Cheep Cheep Cheep whos voice is this?" style="width:100%;"/>
+            </div>
+            <div class="Front">
+                <img src="/img/FrontCover.png" alt="Cover image of 'Whos Voice is This' by All Childrens Reading Cambodia" style="width:100%;"/>
+                <h1>Who's Voice is This?</h1>
+                <h3><strong>Author:</strong> All Children Reading Cambodia</h3>
+                <h3><strong>Illustrator:</strong> Hin Kimyean</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="row">
+        <div id="footerwrap">
+            <div class="AnimalSelection">
+                <img id="Chick" class="animalPiece" src="/img/Chick.png"/>
+                <img id="Duck" class="animalPiece" src="/img/Duck.png"/>
+                <img id="Cow" class="animalPiece" src="/img/Cow.png"/>
+            </div>
+        </div>
+    </div>
+    
+      
+</body>
+</html>
