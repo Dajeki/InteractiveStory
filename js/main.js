@@ -12,7 +12,7 @@ let audioURLs = ["https://freesound.org/data/previews/73/73573_877451-lq.mp3", "
 function setupBookClasses() {
     $(".Book").children("div").each(function(index, elem) {
         if (index % 2 == 0){
-            $(this).addClass("oddPage closeOddPage preload hiddenToggle");
+            $(this).addClass("oddPage closeOddPage preload");
         }
         else {
             $(this).addClass("evenPage closeEvenPage");
@@ -30,37 +30,18 @@ function setupBookAnimation() {
 
         //going fowards and since the first page is on the bottom, we need previous child turned when clicked
         if (eventObject.hasClass("evenPage")){
-            if (eventObject.hasClass("closeEvenPage")) {
                 eventObject.removeClass("closeEvenPage").addClass('openEvenPage').css('z-index', zIndexCurrent++);
                 eventObject.prev("div").removeClass("closeOddPage").addClass('openOddPage').css('z-index', zIndexCurrent++);
-                setTimeout(function(eventObject){ eventObject.prev("div").toggleClass('hiddenToggle'); }, 500, eventObject);
+                // setTimeout(function(eventObject){ eventObject.prev("div").toggleClass('hiddenToggle'); }, 500, eventObject);
                 currentPage += 2;
-                
-            }
-            else if (eventObject.hasClass("openEvenPage")){
-                eventObject.removeClass("openEvenPage").addClass("closeEvenPage").css('z-index', '');
-                eventObject.prev("div").removeClass("openOddPage").addClass("closeOddPage").css('z-index', '');
-                setTimeout(function(eventObject){ eventObject.prev("div").toggleClass('hiddenToggle'); }, 500, eventObject);
-                zIndexCurrent -= 2;
-                currentPage -= 2;
-                
-            }
         }
         //! FOR SOME REASON CAN ONLY GET EVEN EVENT CLICK (Acceptable because our drag is on that side as well so we still have access to it)
-        // else {
-        //     //going backwards and since last page on top we need next turn too
-        //     if (eventObject.hasClass("closeOddPage")) {
-        //         eventObject.removeClass("closeOddPage").addClass('openOddPage').css('z-index', current++);
-        //         eventObject.next("div").removeClass("closeEvenPage").addClass('openEvenPage').css('z-index', current++);
-        //         eventObject.toggleClass('hiddenToggle');
-        //     }
-        //     else if (eventObject.hasClass("openOddPage")){
-        //         eventObject.removeClass("openOddPage").addClass("closeOddPage").css('z-index', '');
-        //         eventObject.next("div").removeClass("openEvenPage").addClass("closeEvenPage").css('z-index', '');
-        //         eventObject.toggleClass('hiddenToggle');
-        //         current -= 2;
-        //     }
-        // }
+        else {
+                eventObject.removeClass("openOddPage").addClass("closeOddPage").css('z-index', '');
+                eventObject.next("div").removeClass("openEvenPage").addClass("closeEvenPage").css('z-index', '');
+                zIndexCurrent -= 2;
+                currentPage -= 2;
+        }
     });
 }
 
@@ -116,7 +97,7 @@ function setupPiecesDrag() {
     $( "#Chick" ).draggable({
         containment: "body",
         scroll: false,
-        revert: 'valid',
+        revert: 'invalid',
     });
     //dropable on unanswered chick picture
     $( "#chickUnAns" ).droppable( 
