@@ -97,7 +97,7 @@ function setupPiecesDrag() {
     $( "#Chick" ).draggable({
         containment: "body",
         scroll: false,
-        revert: 'invalid',
+        revert: 'valid',
     });
     //dropable on unanswered chick picture
     $( "#chickUnAns" ).droppable( 
